@@ -1,2 +1,1 @@
-# IDG1100
-IDG1100 – Web Fundamentals - Assignment
+# IDG1100 – Web Fundamentals - Assignment
