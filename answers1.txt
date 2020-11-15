@@ -1,0 +1,7 @@
+Section I – OS, Kernel, Shell
+Please store the following questions & answers in a file called answers1.txt
+1. What components are part of the Von Neuman Architecture
+2. What is user space?
+3. What is the shell?
+4. Where is the shell located?
+5. What is the main task of the shell?
