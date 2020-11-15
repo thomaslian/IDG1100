@@ -5,112 +5,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDG1100 Assignment</title>
+    <style>
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>IDG1100 OBLIG</h1>
-    
-    <h3>1. What components are part of the Von Neuman Architecture</h3>
-    <p></p>
-    <code></code>
 
-        
+    <h3>1. What components are part of the Von Neuman Architecture</h3>
+    <p>A central processing unit, a control unit, a memory unit, external mass storage and input/output mechanisms</p>
+
+
     <h3>2. What is user space?</h3>
-    <p></p>
-    <code></code>
-    
+    <p>Where the user is in control. Outside the kernel, but the user space can have multiple programs and libraries
+        that interact with the kernel</p>
+
     <h3>3. What is the shell?</h3>
-    <p></p>
-    <code></code>
-    
+    <p>Tool for manipulating data and executing several applications. There is multiple shells to choose from, and can
+        be used as an access to operating systems services</p>
+
     <h3>4. Where is the shell located?</h3>
-    <p></p>
-    <code></code>
-    
+    <p>The shell is a part of the user space. By typing in a terminal or running scripts, we are interacting with the
+        system, and therefore using a shell.</p>
+
     <h3>5. What is the main task of the shell?</h3>
-    <p></p>
-    <code></code>
-    
+    <p>Provides a command line interface to make it possible for a user to communicate with a operating system.</p>
+
     <h3>6. What is the octal representation of a file that can be read and written only by its owner?</h3>
-    <p></p>
-    <code></code>
-    
-    <h3>7. In UNIX systems, what is the common name of the special user that can access and modify every
-        file?</h3>
-    <p></p>
-    <code></code>
-    
+    <p>-rw-------</p>
+
+    <h3>7. In UNIX systems, what is the common name of the special user that can access and modify every file?</h3>
+    <p>root</p>
+
     <h3>8. Which file permission classes are available in UNIX systems?</h3>
-    <p></p>
-    <code></code>
-    
+    <p>Read, write and execute</p>
+
     <h3>9. As of 2020, which percentage of servers have UNIX-like OS?</h3>
-    <p></p>
-    <code></code>
-    
+    <p>More than 70%</p>
+
     <h3>10. The command ssh will:</h3>
-    <p></p>
-    <code></code>
-    
+    <p>Securly login to a remote computer over a network</p>
+
     <h3>11. UNIX Command: access your current working directory</h3>
-    <p></p>
-    <code></code>
-    
+    <code>pwd</code>
+
     <h3>12. UNIX Command: rename files (give an example)</h3>
-    <p></p>
-    <code></code>
-    
+    <code>mv test.txt test2.txt</code>
+
     <h3>13. UNIX Command: schedule the execution of programs in the future</h3>
-    <p></p>
-    <code></code>
-    
+    <code>*/30 */2 * * * /home/thomas/bash.sh > /home/thomas/log/bash-file.txt</code>
+
     <h3>14. UNIX Command: Forcefully shutdown the command with process ID 123</h3>
-    <p></p>
-    <code></code>
-    
+    <code>kill 123</code>
+
     <h3>15. UNIX Command: access your root user</h3>
-    <p></p>
-    <code></code>
-    
+    <code>sudo su</code>
+
     <h3>16. Crontab scheduled: At minute 30 on Sunday.</h3>
-    <p></p>
-    <code></code>
-    
+    <code>30 * * * 0 /home/thomas/bash.sh > /home/thomas/log/bash-file.txt</code>
+
     <h3>17. Crontab scheduled: At minute 30 on day-of-month 15.</h3>
-    <p></p>
-    <code></code>
-    
+    <code>30 * 15 * * /home/thomas/bash.sh > /home/thomas/log/bash-file.txt</code>
+
     <h3>18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.</h3>
-    <p></p>
-    <code></code>
-    
+    <code>30 5 * 6 * /home/thomas/bash.sh > /home/thomas/log/bash-file.txt</code>
+
     <h3>19. Script: print your name and date</h3>
-    <p></p>
-    <code></code>
-    
+    <code>
+        #!/bin/bash<br>
+        echo "Thomas - $(date)"
+    </code>
+
     <h3>20. Script: add two numeric values, print the result</h3>
-    <p></p>
-    <code></code>
-    
+    <code>
+        #!/bin/bash<br>
+        num1=2<br>
+        num2=3<br>
+        sum=$((num1+num2))<br>
+        echo $sum
+    </code>
+
     <h3>21. Script: inputs username, prints “USERNAME stored”</h3>
-    <p></p>
-    <code></code>
-    
+    <code>
+        #!/bin/bash<br>
+        echo Enter your username<br>
+        read username<br>
+        echo $username stored
+    </code>
+
     <h3>22. Script: Store the output of the command “hostname” in a variable. Display “This script is
         running on _.” where “_” is the output of the “hostname” command.</h3>
-    <p></p>
-    <code></code>
-    
+    <code>
+        #!/bin/bash<br>
+        host=$HOSTNAME<br>
+        echo This script is running on $host
+
+    </code>
+
     <h3>23. Script: Store the output of the working directory (from where the script is run) in a variable
         then print the variable.</h3>
-    <p></p>
-    <code></code>
-    
+    <code>
+        #!/bin/bash <br>
+        dir=$PWD <br>
+        echo $dir
+    </code>
+
     <h3>24. Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at” +
         DATE. Cronjob is scheduled every 30 minutes on today’s date (only today).</h3>
-    <p></p>
-    <code></code>
-    
+    <p>
+    <ul>
+        <li>Open your favorite UNIX terminal</li>
+        <li>Use the following command to create a file to be executed (nano task.sh)</li>
+        <li>Insert the following code into the file</li>
+        <code>
+                #!/bin/bash <br>
+                echo "Task scheduled at $(date)"
+            </code>
+        <li>Save the file by pressing ctrl + o, and enter to confirm. </li>
+        <li>Exit the file by pressing ctrl + x</li>
+        <li>Make sure that the file is executable by running the following command (chmod +x task.sh)</li>
+        <li>Run the command (crontab -e) to start a new crontab</li>
+        <li>At the bottom of the file enter the following code. */30 * 15 11 * means run every 30 minutes the 15th of
+            november, task.sh is the file you want to run, task-log.txt is the file that will hold the output of task.sh
+        </li>
+        <code>
+                */30 * 15 11 * /home/thoma/task.sh >> /home/thoma/task-log.txt
+            </code>
+        <li>ctrl + o to save, ctrl + x to exit</li>
+        <li>File should now be executed every 30 minutes the 15th of november</li>
+    </ul>
+    </p>
+
     <h3>25. Create a script that takes an input (letter or number) that will display the answer of a question.
         The script should when started list a menu for the user with the different questions that can be
         chosen and which corresponding letter the user will have to give as input to display the answer of
@@ -118,8 +147,38 @@
         the script. The menu should also have a default case where all the items is displayed again, or no
         changes is made if the user gives an invalid input. Hint: use a switch case to be able to handle the
         menu. Each option in the menu should lead to an echo of the answer</h3>
-    <p></p>
-    <code></code>
+    <code>
+        #!/bin/bash
+        echo "Enter the letter you would like to know the answer to"
+        echo "a. How many people live in Europe?"
+        echo "b. What is the capital of China?"
+        echo "c. What is the warmest registered temperature in Norway?"
+        echo ""
+        echo "Type x to show this menu again!"
+        echo "Type q to quit"
+
+        while true; do
+            read -p 'Enter your letter: ' input
+            case "$input" in
+                [a]* )
+                    echo 'There is 741.4 million people in Europe.';;
+                [b]* )
+                    echo 'Capital of china is Beijing!';;
+                [c]* )
+                    echo 'The hottest was 35.6 degrees';;
+                [q]* )
+                    exit 0;;
+                * )
+                    echo "Enter the letter you would like to know the answer to"
+                    echo "a. How many people live in europe?"
+                    echo "b. What is the capital of China?"
+                    echo "c. What is the warmest registered temperature in Norway?"
+                    echo ""
+                    echo "Type x to show this menu again!"
+                    echo "Type q to quit";;
+            esac
+        done
+    </code>
 
 </body>
 

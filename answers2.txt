@@ -1,28 +1,89 @@
 Section II – UNIX, Scripting
 Please store the following questions and answers in a file called answers2.txt
 6. What is the octal representation of a file that can be read and written only by its owner?
-7. In UNIX systems, what is the common name of the special user that can access and modify every
-file?
+- -rw-------
+
+7. In UNIX systems, what is the common name of the special user that can access and modify every file?
+- root
+
 8. Which file permission classes are available in UNIX systems?
+- Read, write and execute
+
 9. As of 2020, which percentage of servers have UNIX-like OS?
+- More than 70%
+
 10. The command ssh will:
+- Securly login to a remote computer over a network.
+
 11. UNIX Command: access your current working directory
+- pwd
+
 12. UNIX Command: rename files (give an example)
+- mv test.txt test2.txt
+
 13. UNIX Command: schedule the execution of programs in the future
+- 30 * * * * /home/thomas/bash.sh > /home/thomas/log/bash-file.txt
+
 14. UNIX Command: Forcefully shutdown the command with process ID 123
+- kill 123
+
 15. UNIX Command: access your root user
+- sudo su
+
 16. Crontab scheduled: At minute 30 on Sunday.
+- 30 * * * 0 /home/thomas/bash.sh > /home/thomas/log/bash-file.txt
+
 17. Crontab scheduled: At minute 30 on day-of-month 15.
+- 30 * 15 * * /home/thomas/bash.sh > /home/thomas/log/bash-file.txt
+
 18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.
+- 30 5 * 6 * /home/thomas/bash.sh > /home/thomas/log/bash-file.txt
+
 19. Script: print your name and date
+#!/bin/bash
+echo "Thomas - $(date)"
+
 20. Script: add two numeric values, print the result
+#!/bin/bash
+num1=2
+num2=3
+sum=$((num1+num2))
+echo $sum
+
 21. Script: inputs username, prints “USERNAME stored”
+#!/bin/bash
+echo Enter your username
+read username
+echo $username stored
+
 22. Script: Store the output of the command “hostname” in a variable. Display “This script is
 running on _.” where “_” is the output of the “hostname” command.
+#!/bin/bash
+host=$HOSTNAME
+echo This script is running on $host
+
 23. Script: Store the output of the working directory (from where the script is run) in a variable
 then print the variable.
+#!/bin/bash
+dir=$PWD
+echo $dir
+
 24. Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at” +
 DATE. Cronjob is scheduled every 30 minutes on today’s date (only today).
+1. Open your favorite UNIX terminal
+2. Use the following command to create a file to be executed (nano task.sh)
+3. Insert the following code into the file
+    #!/bin/bash
+    echo "Task scheduled at $(date)"
+4. Save the file by pressing ctrl + o, and enter to confirm. 
+5. Make sure that the file is executable by running the following command (chmod +x task.sh)
+6. Exit the file by pressing ctrl + x
+7. Run the command (crontab -e) to start a new crontab
+8. At the bottom of the file enter the following code. */30 * 15 11 * means run every 30 minutes the 15th of november, task.sh is the file you want to run, task-log.txt is the file that will hold the output of task.sh
+    */30 * 15 11 * /home/thoma/task.sh >> /home/thoma/task-log.txt
+9. ctrl + o to save, ctrl + x to exit
+10. File should now be executed every 30 minutes the 15th of november
+
 25. Create a script that takes an input (letter or number) that will display the answer of a question.
 The script should when started list a menu for the user with the different questions that can be
 chosen and which corresponding letter the user will have to give as input to display the answer of
@@ -30,3 +91,34 @@ the desired question. One of the possible inputs the user should be able to make
 the script. The menu should also have a default case where all the items is displayed again, or no
 changes is made if the user gives an invalid input. Hint: use a switch case to be able to handle the
 menu. Each option in the menu should lead to an echo of the answer
+
+#!/bin/bash
+echo "Enter the letter you would like to know the answer to"
+echo "a. How many people live in Europe?"
+echo "b. What is the capital of China?"
+echo "c. What is the warmest registered temperature in Norway?"
+echo ""
+echo "Type x to show this menu again!"
+echo "Type q to quit"
+
+while true; do
+    read -p 'Enter your letter: ' input
+    case "$input" in
+        [a]* )
+            echo 'There is 741.4 million people in Europe.';;
+        [b]* )
+            echo 'Capital of china is Beijing!';;
+        [c]* )
+            echo 'The hottest was 35.6 degrees';;
+        [q]* )
+            exit 0;;
+        * )
+            echo "Enter the letter you would like to know the answer to"
+            echo "a. How many people live in europe?"
+            echo "b. What is the capital of China?"
+            echo "c. What is the warmest registered temperature in Norway?"
+            echo ""
+            echo "Type x to show this menu again!"
+            echo "Type q to quit";;
+    esac
+done

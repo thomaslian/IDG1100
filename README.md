@@ -47,13 +47,18 @@ menu. Each option in the menu should lead to an echo of the answer
 
 ## Section III – HTML/CSS & GIT
 Create a repository called IDG1100-Oblig-STUDENTNAME. Add the following files:
+```
 * answers1.txt
 * answers2.txt
 * index.html
 * style.css (optional)
+```
+
 Index.html will have a basic HTML page (with some inline CSS styling or you can link it to a
 style.css file) with the following elements:
+```
 <H1> – IDG1100 OBLIG
 <H3> – Questions from answers1.txt and answers2.txt
 <p> – Answers that are text
 <code> - Answers that are code
+```

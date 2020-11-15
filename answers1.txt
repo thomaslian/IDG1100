@@ -1,7 +1,16 @@
 Section I – OS, Kernel, Shell
 Please store the following questions & answers in a file called answers1.txt
 1. What components are part of the Von Neuman Architecture
+- A central processing unit, a control unit, a memory unit, external mass storage and input/output mechanisms
+
 2. What is user space?
+- Where the user is in control. Outside the kernel, but the user space can have multiple programs and libraries that interact with the kernel
+
 3. What is the shell?
+- Tool for manipulating data and executing several applications. There is multiple shells to choose from, and can be used as an access to operating systems services
+
 4. Where is the shell located?
+- The shell is a part of the user space. By typing in a terminal or running scripts, we are interacting with the system, and therefore using a shell.
+
 5. What is the main task of the shell?
+- Provides a command line interface to make it possible for a user to communicate with a operating system.
