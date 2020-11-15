@@ -2,14 +2,17 @@
 
 ## Section I – OS, Kernel, Shell
 Please store the following questions & answers in a file called answers1.txt
+```
 1. What components are part of the Von Neuman Architecture
 2. What is user space?
 3. What is the shell?
 4. Where is the shell located?
 5. What is the main task of the shell?
+```
 
 ## Section II – UNIX, Scripting
 Please store the following questions and answers in a file called answers2.txt
+```
 6. What is the octal representation of a file that can be read and written only by its owner?
 7. In UNIX systems, what is the common name of the special user that can access and modify every
 file?
@@ -40,6 +43,7 @@ the desired question. One of the possible inputs the user should be able to make
 the script. The menu should also have a default case where all the items is displayed again, or no
 changes is made if the user gives an invalid input. Hint: use a switch case to be able to handle the
 menu. Each option in the menu should lead to an echo of the answer
+```
 
 ## Section III – HTML/CSS & GIT
 Create a repository called IDG1100-Oblig-STUDENTNAME. Add the following files:
